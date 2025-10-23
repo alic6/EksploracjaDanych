@@ -8,20 +8,18 @@ temperatura = pd.DataFrame({
 })
 
 # === A ===
-print("3 pierwsze wiersze:")
-print(temperatura.head(3))
+print("\n1. Miasta posortowane wg temperatury w lipcu (rosnąco):")
+print(temperatura.sort_values("Lipiec").head())
 
 # === B ===
-temperatura.info()
+print("\n2. Miasta posortowane wg temperatury w styczniu (malejąco):")
+print(temperatura.sort_values("Styczeń", ascending=False).head())
 
-# === C ===
-print(f"Dataframe ma: {temperatura.shape[0]} wierszy i {temperatura.shape[1]} kolumn.")
+#=== C ===
+print("\n3. Miasta posortowane wg temperatury w lipcu (malejąco), a następnie według kwietnia (rosnąco):")
+print(temperatura.sort_values(["Lipiec", "Kwiecień"],
+                         ascending=[False, True]))
 
-# === D ===
-print(f"Nazwy kolumn: {temperatura.columns.tolist()}")
-
-
-# a) Wyświetl pierwsze 3 wiersze
-# b) Wyświetl informacje o typach danych (.info())
-# c) Wyświetl kształt DataFrame (.shape)
-# d) Wyświetl tylko nazwy kolumn (.columns)
+# a) Posortuj miasta według temperatury w lipcu (rosnąco)
+# b) Posortuj miasta według temperatury w styczniu (malejąco)
+# c) Posortuj miasta według temperatury w lipcu (malejąco), a następnie według kwietnia (rosnąco)
